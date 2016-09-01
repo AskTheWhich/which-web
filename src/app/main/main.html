@@ -1,0 +1,38 @@
+<div ng-repeat="ask in asks" class="boxed_large">
+  <span style="font-size:50px;text-align: center;" >{{ ask.text}}</span>
+  <table cellpadding="10" width="100%" id="fixedheight">
+    <tr>
+      <td>
+        <div class="boxed_small" style="text-align: center;">
+          <!--<div class="result" style="text-align: left;">
+            <div style="font-size:80px; text-align: center; height: 1.2em;">{{ ask.left.count}}</div>-->
+          <div class="res_bar animated fadeInLeft" ng-style="{ width: ask.left.relative_size + '%' }">
+            {{ ask.left.relative_size | number }}%
+          </div>
+          <!--</div>-->
+          <div>
+            <img ng-show="ask.left.type=='img'" data-ng-src="data:image/png;base64,{{ask.left.value}}"
+                 data-err-src="images/png/avatar.png"  class="img_ask"/>
+            <span ng-show="ask.left.type=='txt'" style="font-size:80px; border-color: black">{{ ask.left.value }}</span>
+          </div>
+        </div>
+      </td>
+      <td>
+        <div class="boxed_small" style="text-align: center;">
+          <!--<div class="result" style="text-align: left;">
+            <div style="font-size:80px; text-align: center; height: 1.2em;">{{ ask.left.count}}</div>-->
+          <div class="res_bar animated fadeInLeft" ng-style="{ width: ask.right.relative_size + '%' }">
+            {{ ask.right.relative_size | number }}%
+          </div>
+          <!--</div>-->
+          <div>
+            <img ng-show="ask.right.type=='img'" data-ng-src="data:image/png;base64,{{ask.right.value}}"
+                 data-err-src="images/png/avatar.png" class="img_ask"/>
+            <span ng-show="ask.right.type=='txt'"
+                  style="font-size:80px; border-color: black">{{ ask.right.value }}</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
